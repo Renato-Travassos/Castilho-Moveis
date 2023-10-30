@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Serviço</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">   
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">Ínicio</a></li>
+                <li class="nav-item"><a href="sobre.html">Sobre</a></li>
+                <li class="nav-item"><a href="contato.html">Contato</a></li>
+                <li class="nav-item"><a href="serviço.html">Serviços</a></li>
+              
+            </ul>
+            <div class="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main> 
+        <p>Trabalhamos com apartamentos e condomínios, junto com prazo de entrega,para melhor vizualização veja no     <a href="https://www.instagram.com/estilo.moveis1/" target="_blank" title="Instagram">Instagram</a></p>
+  
+        <nav id="opcs">
+            <a href="#" title="cozinhas" ><h2>Cozinhas</h2></a>
+            <a href="#" title="portas"><h2>Portas</h2></a>
+            <a href="#" title="paineis"><h2>Painéis</h2></a>
+            <a href="#" title="box"><h2>Box</h2></a>
+         </nav>
+        <div id="galeria">
+         
+         <div title="cozinhas">
+             <img src="móveis/estilo.moveis1_116871266_712031056312189_5763564263680568478_n.jpg" alt=""> 
+             <img src="móveis/estilo.moveis1_117184117_344175270308228_6828548198409250422_n.jpg" alt=""> 
+             <img src="móveis/estilo.moveis1_117316292_677581256165143_5417352825729669307_n.jpg" alt=""> 
+             <img src="móveis/estilo.moveis1_279894573_169521668836286_4792644368608407792_n8.jpg" alt="">
+              <img src="móveis/estilo.moveis1_279894573_169521668836286_4792644368608407792_n13.jpg"/>
+               <img src="móveis/estilo.moveis1_279894573_169521668836286_4792644368608407792_n19.jpg"/> 
+               <img src="móveis/estilo.moveis1_279894573_169521668836286_4792644368608407792_n.jpg"/> 
+               <img src="móveis/estilo.moveis1_279567347_718330195971234_1150880265407022947_n.jpg"/>
+             <img src="móveis/estilo.moveis1_279555216_1018898029063731_2859285608972424375_n.jpg"/> 
+         </div>
+         <div title="portas">
+             <img src="móveis/estilo.moveis1_279894573_169521668836286_4792644368608407792_n18.jpg"/>
+             <img src="móveis/estilo.moveis1_279894573_169521668836286_4792644368608407792_n15.jpg"/>
+             <img src="móveis/estilo.moveis1_279894573_169521668836286_4792644368608407792_n6.jpg"/>
+             <img src="móveis/estilo.moveis1_116839975_219650019351733_4668833299872871524_n.jpg"/>
+         </div>
+         <div title="paineis">
+             <img src="móveis/estilo.moveis1_116885242_1002553363515325_5527705078679036727_n.jpg">
+             <img src=" móveis/estilo.moveis1_116806509_2676817799272434_2891446677059640127_n.jpg">
+            <img src="móveis/estilo.moveis1_116861171_347644899732675_958604632838225846_n.jpg">
+            <img src="móveis/estilo.moveis1_117343170_1597993630360722_6567387117668157655_n.jpg">
+            <img src="móveis/estilo.moveis1_279660309_1338405063293958_7617173770260484636_n.jpg">         
+         </div>
+         <div title="box">
+             <img src="box/1100-banheiro-decorado-gastao-madeira-marel-grupo-factory-viva-decora.webp">
+                 <img src="box/D_NQ_NP_2X_640941-MLB44170003434_112020-F.webp">
+                 <img src="box/imagem-12.jpeg">
+         </div>
+     
+     
+        </div>
+         
+    </main>
+    <footer>
+        <ul >
+            <li><a href="https://www.instagram.com/estilo.moveis1/" target="_blank" title="Instagram">Instagram </a> 
+                <i class="fab fa-instagram"></i>
+            </li>
+            <li><a href="https://api.whatsapp.com/send?phone=5585996161104" target="_blank" title="WhatsApp">Contato </a>
+                <i class="fab fa-whatsapp"></i>
+            </li>
+            <li><a target="_blank"  href="mailto:castilhomoveis@live.com" aria-label="@estilo.moveis1 email address"  title="Email"> Email</a>  
+                <i class="far fa-envelope"></i>
+            </li>
+        </ul>
+    </footer>
+   
+</body>
+<script src="script.js"></script>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+$(document).ready(function() {
+if ($(window).width()>720) {
+
+  $('#opcs a').click(function () {
+    let selecionado = $(this)
+    selecionado.addClass('ver');
+    $('#opcs a').not(this).removeClass('ver');
+   
+    
+ 
+    $(`#galeria div[title!="${selecionado.attr("title")}"]`).fadeOut(500).find('img').css({"opacity":"0","transform":"none"})   
+    $(`#galeria div[title="${selecionado.attr('title')}"]`).css("display", "grid").find('img').each(function (i, e) {
+        setTimeout(()=> {
+            e.style.opacity = '1';
+            e.style.transform = "scale(1.1)";
+        }, 400 * i); 
+    }); 
+});
+}else{
+    $('#opcs a').click(function () {
+    let selecionado = $(this)
+    selecionado.addClass('ver');
+    $('#opcs a').not(this).removeClass('ver');
+   
+    
+ 
+    $(`#galeria div[title!="${selecionado.attr("title")}"]`).fadeOut(500).find('img').css({"opacity":"0","transform":"none"})   
+    $(`#galeria div[title="${selecionado.attr('title')}"]`).css("display", "inline").find('img').each(function (i, e) {
+        setTimeout(()=> {
+            e.style.opacity = '1';
+            e.style.transform = "scale(0.9)";
+        }, 400 * i); 
+    }); 
+});
+
+}
+});
+</script>
+</html>
